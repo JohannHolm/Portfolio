@@ -1,0 +1,66 @@
+<div class="contact" id="contact">
+    <div class="heading">Contact</div>
+    <div class="content">
+        <div class="text-con unselectable">
+            <div class="text-heading">Got a problem to solve?</div>
+            <div class="text">
+                Use this form to get in touch. Your thoughts and projects matter to me, and I'm ready to support them
+                with my skills.
+            </div>
+            <div class="text-footer"> Need a Frontemd developer? <span>Contact Me!</span></div>
+        </div>
+        <div class="form">
+            <form id="contact-form" #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm.value)">
+                <div class="form-group floating-label">
+                    <input [(ngModel)]="inputValueName" name="name" #nameField="ngModel"
+                        (ngModelChange)="checkInputValues()" type="text" id="name" placeholder=" " required>
+                    <label for="name">Your name</label>
+                    <span *ngIf="nameField.invalid && nameField.touched && !emailSend" class="error-span">Name is
+                        required.</span>
+                </div>
+                <div class="form-group floating-label">
+                    <input [(ngModel)]="inputValueMail" name="mail" #emailField="ngModel" type="email" id="email"
+                        (ngModelChange)="checkInputValues()" placeholder=" " required pattern=".+@.+\..+">
+                    <label for="email">Your email</label>
+                    <span *ngIf="emailField.invalid && emailField.touched && !emailSend" class="error-span">A valid
+                        email is
+                        required.</span>
+                </div>
+                <div class="form-group floating-label">
+                    <textarea [(ngModel)]="inputValueMessage" name="message" #messageField="ngModel" id="message"
+                        (ngModelChange)="checkInputValues()" placeholder=" " rows="8" required></textarea>
+                    <label class="label-textarea" for="message">Your message</label>
+                    <span *ngIf="messageField.invalid && messageField.touched && !emailSend" class="error-span">Message
+                        is
+                        required.</span>
+                </div>
+                <div class="form-group checkbox">
+                    <label>
+                        <input type="checkbox" [id]="checkboxId" [(ngModel)]="isChecked" [checked]="isChecked"
+                            name="checkbox" #checkboxField="ngModel" (change)="onCheckboxChange($event)" [hidden]="true"
+                            required />
+                        <img [src]="getCheckboxImage()" (mouseover)="onMouseOver()" (mouseout)="onMouseOut()"
+                            [alt]="isChecked ? 'Checked' : 'Not checked'" />
+
+                    </label>
+                    <div class="privacy">I've read the <a routerLink="./privacy">privacy policy</a> and agree to the
+                        processing of my data as outlined.
+                    </div>
+                </div>
+                <div id="notification" [ngClass]="{'show': emailSend}">Email successfully sent.</div>
+                <div class="button-send">
+                    <span *ngIf="!emailSend" class="succes-span"></span>
+                    <button type="submit" [disabled]="contactForm.invalid" class="button">Say Hello :)</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <a *ngIf="scrollHover" (mouseover)="scrollHover=false" class="scroll" (click)="scrollOnTop()"><img
+            src="assets/images/icons/scroll/up2.png" alt="scroll-top"></a>
+    <a *ngIf="!scrollHover" (mouseout)="scrollHover=true" class="scroll" (click)="scrollOnTop()"><img
+            src="assets/images/icons/scroll/up1.png" alt="scroll-top"></a>
+    <div class="background-ellipse">
+        <img class="ellipse-1 unselectable" src="assets/images/Ellipse.png" alt="bg">
+        <img class="ellipse-2 unselectable" src="assets/images/Ellipse.png" alt="bg">
+    </div>
+</div>

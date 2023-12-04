@@ -1,0 +1,46 @@
+<div class="head" id="head">
+    <div class="background-ellipse">
+        <img class="ellipse-big" src="assets/images/Ellipse.png" alt="bg">
+    </div>
+    <div class="navigation">
+        <img class="unselectable" src="assets/images/logo.png" alt="">
+        <nav>
+            <div><a href="#aboutme" name="About me">About me</a></div>
+            <div><a href="#skillset" name="Skill set">Skill set</a></div>
+            <div><a href="#mywork" name="My Work">My work</a></div>
+        </nav>
+        <div class="mobile-navigatin-container" *ngIf="mobilemenu">
+            <a (click)="mobileMenu()" href="#aboutme">About me</a>
+            <a (click)="mobileMenu()" href="#skillset">Skill set</a>
+            <a (click)="mobileMenu()" href="#mywork">My work</a>
+            <a (click)="mobileMenu()" href="#contact">Contact</a>
+        </div>
+        <a (click)="mobileMenu()" class="mobile-nav">
+            <img *ngIf="!mobilemenu" src="assets/images/icons/burgermenu/burger.png" alt="navigation">
+            <img *ngIf="mobilemenu" src="assets/images/icons/burgermenu/close.png" alt="navigation">
+        </a>
+    </div>
+    <div class="content unselectable">
+        <img src="assets/images/me.png" alt="bennet witczak">
+        <div class="head-content-text">
+            <div class="head-text">Hello! I am Johann</div>
+            <div class="head-text-big front">Frontend</div>
+            <div class="head-text-big dev">Developer</div>
+        </div>
+    </div>
+    <div class="scroll-container unselectable">
+        <div>
+            <div class="scroll-text">Scroll</div>
+            <div class="scroll-line"></div>
+        </div>
+    </div>
+    <div class="left-icon-container">
+        <div class="icons-links">
+            <a class="icon-link" href="https://github.com/bwfront" target="_blank"><img
+                    src="assets/images/icons/links/github-blue.png" alt="github"></a>
+            <a class="icon-link" href="#contact"><img src="assets/images/icons/links/mail-blue.png" alt=""></a>
+            <a class="icon-link" href="https://www.linkedin.com/in/bennet-witczak-713b5829a/" target="_blank"><img
+                    src="assets/images/icons/links/linkedin-blue.png" alt=""></a>
+        </div>
+    </div>
+</div>

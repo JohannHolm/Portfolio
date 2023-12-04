@@ -1,0 +1,325 @@
+@import '_variables.sass'
+
+.head
+    height: 100vh
+    max-height: 1325px
+    overflow: hidden //Elipse
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, #d7e2fe8a 100%)
+    position: relative
+.navigation
+    z-index: 10
+    position: absolute
+    width: 100%
+    display: flex
+    justify-content: space-between
+    align-items: center
+    top: 30px
+    img
+        margin-left: 100px
+        width: auto
+        height: 80px
+
+    nav
+        margin-right: 100px
+        display: flex
+        justify-content: space-between
+        align-items: center
+        div
+            display: flex
+            justify-content: flex-end
+            width: 120px
+            margin-left: 50px
+            a
+                text-decoration: none
+                display: inline-block
+                cursor: pointer
+                font-size: 23px
+                color: $base-color
+                font-family: 'Montserrat', sans-serif
+
+                &:hover
+                    transition: all 225ms
+                    font-weight: 700
+
+.mobile-nav
+    display: none
+    margin-right: 100px
+    z-index: 1001
+    cursor: pointer
+    img
+        z-index: 19000
+        height: 40px
+        width: auto
+
+.mobile-navigatin-container
+    padding: 200px 0
+    position: absolute
+    top: -50px
+    width: 100%
+    display: flex
+    align-items: center
+    flex-direction: column
+    background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5004595588235294) 30%, rgba(255,255,255,0.7973783263305322) 50%, rgba(255,255,255,0.9) 100%)
+    z-index: 1000
+    animation: dropDown 300ms ease-in-out forwards
+    transform-origin: top center
+    a
+        z-index: 10000
+        margin: 10px
+        color: #1023b4
+        font-size: 25px
+        font-weight: 500
+        font-family: 'Montserrat', sans-serif
+        text-decoration: none
+        &:hover
+            color: $base-color
+
+@keyframes dropDown
+    0%
+        transform: scaleY(0)
+
+    80%
+        transform: scaleY(1.1)
+
+    100%
+        transform: scaleY(1)
+
+.content
+    max-width: $max-w
+    width: 100%
+    display: flex
+    justify-content: center
+    align-items: flex-end
+    position: relative
+    height: 100vh
+
+    img
+        z-index: 0
+        position: absolute
+        bottom: 0
+        left: 0
+        height: calc( 110% - 150px )
+        width: auto
+
+    .head-content-text
+        position: absolute
+        right: 100px
+        top: 30%
+        .head-text
+            z-index: 10
+            color: $base-color
+            font-size: 64px
+            font-family: 'Montserrat', sans-serif
+
+        .head-text-big
+            color: $base-color
+            font-family: 'Baloo Da 2', sans-serif
+            text-transform: uppercase
+            margin: -30px 0
+        .front
+            font-size: 128px
+            font-weight: 800
+        .dev
+            margin: -80px 0
+            font-size: 118px
+            font-weight: 800
+
+.background-ellipse
+    position: relative
+    max-height: 100vh
+    width: 100%
+.ellipse-big
+    position: absolute
+    top: -74px
+    left: -199px
+    width: 900px
+    height: 900px
+
+.scroll-container
+    position: relative
+    margin-top: 20px
+    margin-right: 425px
+    div
+        display: flex
+        flex-direction: column
+        align-items: center
+        position: absolute
+        bottom: 0
+        right: 0
+        height: calc( 100vh - 750px )
+        max-height: 400px
+        .scroll-text
+            text-transform: uppercase
+            color: $base-color
+            font-family: 'Montserrat', sans-serif
+            font-size: 23px
+            margin-right: -43px
+        .scroll-line
+            flex-grow: 1
+            height: calc( 100% - 32px )
+            width: 2px
+            background-color: $base-color
+
+.left-icon-container
+    position: relative
+    margin-right: 125px
+    .icons-links
+        position: absolute
+        right: 0
+        bottom: 100px
+        display: flex
+        flex-direction: column
+        .icon-link
+            cursor: pointer
+            transition: 225ms
+            position: relative
+            width: 20px
+            display: flex
+            justify-content: flex-start
+            &:hover
+                margin-left: -10px
+            img
+                padding: 12.5px
+
+/* Respnsive */
+@media ( max-width: 1550px )
+    .content
+        img
+            max-width: 700px !important
+            height: auto
+            max-height: calc( 100% - 150px )
+@media ( max-width: 1450px )
+    .icons-links
+        display: none !important
+    .ellipse-big
+        left: -300px
+    .content
+        img
+            max-width: 600px !important
+            height: auto
+@media ( max-width: 1350px )
+    .head-content-text
+        .head-text
+            font-size: 55px !important
+        .front
+            font-size: 108px !important
+        .dev
+            margin: -80px 0
+            font-size: 100px !important
+
+@media ( max-width: 1240px )
+    .ellipse-big
+        left: -400px
+    .content
+        img
+            width: auto !important
+            max-width: unset !important
+            height: calc( 100% - 400px ) !important
+
+@media  ( max-width: 1150px )
+    .navigation
+        nav
+            display: none
+        .mobile-nav
+            display: unset !important
+    .ellipse-big
+        width: 120vh !important
+        height: auto !important
+    .scroll-container
+        display: none
+    .head-content-text
+        left: 100px !important
+        top: 150px !important
+        .head-text
+            color: #fff !important
+        .front
+            color: #fff !important
+        .dev
+            color: #fff !important
+
+@media  ( max-width: 890px )
+    .left-icon-container
+        display: none
+    .ellipse-big
+        top: -200px !important
+        right: 100px !important
+        left: unset !important
+    .head-content-text
+        .head-text
+            font-size: 37px !important
+        .front
+            font-size: 73px !important
+        .dev
+            margin: -60px 0 !important
+            font-size: 67px !important
+    .content
+        img
+            max-height: calc( 100% - 150px ) !important
+            max-width: calc( 100% - 100px ) !important
+            margin-left: auto
+            margin-right: auto
+            left: 0
+            right: 0
+            width: auto !important
+            height: auto !important
+            z-index: 999
+
+@media  ( max-width: 750px )
+    .head-content-text
+        margin-left: -50px !important
+
+    .navigation
+        img
+            margin-left: 50px !important
+        nav
+            display: none
+        .mobile-nav
+            display: unset
+            margin-right: 50px !important
+
+@media  ( max-width: 600px )
+    .navigation
+        img
+            height: 45px !important
+    .mobile-nav
+        img
+            height: 35px !important
+            width: auto !important
+    .content
+        img
+            bottom: 0 !important
+            max-width: calc( 100% - 100px )
+            height: auto !important
+            max-height: calc( 100% - 350px )
+
+@media  ( max-width: 560px )
+    .head-content-text
+        .head-text
+            font-size: 24px !important
+            line-height: 40px
+        .front
+            font-size: 55px !important
+        .dev
+            margin: -50px 0 !important
+            font-size: 51px !important
+    .ellipse-big
+        right: 40px !important
+
+    .content
+        img
+            max-width: calc( 125% - 105px ) !important
+            max-height: calc( 145% - 150px ) !important
+            z-index: 999
+
+@media  ( max-width: 373px )
+    .head-content-text
+        .head-text
+            font-size: 18px !important
+            line-height: 40px
+        .front
+            font-size: 42px !important
+        .dev
+            margin: -40px 0 !important
+            font-size: 40px !important
+    .ellipse-big
+        top: -140px !important

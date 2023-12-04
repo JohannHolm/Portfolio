@@ -1,0 +1,80 @@
+.skillset
+    background-image: linear-gradient(120deg, rgba(89,136,255,1) 0%, rgba(89,136,255,1) 50%, rgba(0,67,240,1) 100%)
+    position: relative
+
+.skillset-container
+    padding: 100px 0
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+
+.skillset-heading
+    color: #fff
+    font-family: 'Baloo Da 2', sans-serif
+    font-size: 96px
+    line-height: 96px
+    font-weight: 800
+    margin-bottom: 60px
+
+.skills-con
+    color: #fff
+    font-family: 'Montserrat', sans-serif
+    width: 100%
+    display: flex
+    gap: 47px
+    align-items: center
+    flex-direction: column
+    div
+        display: flex
+        width: calc( 100% - 120px )
+        justify-content: space-between
+        flex-wrap: wrap
+        .skill
+            display: flex
+            align-items: center
+            flex-direction: column
+            text-align: center
+            font-size: 16px
+            transition: all 125ms
+            width: 20%
+            img
+                height: 75px
+                width: auto
+                transition: all 125ms
+
+            &:hover
+                transition: 50ms
+                font-weight: 700
+                img
+                    transition: all 125ms
+                    //transform: translateY(-5px)
+                    transform: scale(1.1)
+                p
+                    transition: all 125ms
+
+/*Responsive */ 
+@media ( max-width:  1050px )
+    .skill
+        width: 33% !important
+    .skills-con
+        div
+            flex-wrap: wrap
+            justify-content: center
+    
+@media ( max-width:  750px )
+    .skillset
+        padding: 50px 0 !important
+    .skillset-container
+        padding: 50px 0 !important
+    
+    .skills-con
+        div
+            width: calc( 100% - 50px )
+
+@media ( max-width:  520px )
+    .skillset-heading
+        font-size: 64px
+        margin-bottom: 10px
+    .skill
+        width: 50% !important

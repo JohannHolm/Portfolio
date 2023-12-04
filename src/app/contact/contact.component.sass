@@ -1,0 +1,241 @@
+@import '_variables'
+@import 'class'
+
+.contact
+    position: relative
+    padding: 0 100px
+    padding-bottom: 480px
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, #d7e2fe8a 100%)
+    .heading
+        font-size: 90px
+        font-weight: 800
+        color: $base-color
+        font-family: 'Baloo Da 2', sans-serif
+a
+    cursor: pointer
+.content
+    display: flex
+    justify-content: space-between
+    margin: 40px 0
+
+.text-con
+    font-family: 'Montserrat', sans-serif
+    max-width: 540px
+    .text-heading
+        font-size: 32px
+        color: $base-color
+        font-weight: 700
+    .text
+        font-size: 16px
+        margin: 20px 0
+    .text-footer
+        color: $base-color
+        span
+            font-weight: 700
+
+#contact-form
+    position: absolute
+    left: 50%
+    width: calc( 50% - 100px)
+    display: flex
+    gap: 20px
+    flex-direction: column
+
+.checkbox
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    width: 100%
+    label
+        display: flex
+        align-items: center
+        font-size: 14px
+        font-family: 'Montserrat', sans-serif
+        input, img
+            margin-right: 10px
+
+.privacy
+    a
+        color: $base-color
+        cursor: pointer
+        margin: 0 5px
+        text-decoration: none
+        &::after
+            content: ''
+            position: absolute
+            width: 100px
+            height: 2px
+            border-radius: 10px
+            bottom: -1px
+            left: 145px
+            background-color: $base-color
+            transform-origin: bottom left
+            transition: transform 0.25s ease-out
+            transform: scaleX(0)
+        &:hover::after
+            transform: scaleX(1)
+            transform-origin: bottom right
+
+.form-group
+    position: relative
+    padding-top: 15px
+    font-family: 'Montserrat', sans-serif
+
+    input, textarea
+        background-color: #fff
+        font-size: 16px
+        width: calc( 100% - 50px )
+        border: 1px solid $base-color
+        padding: 15px 25px
+        border-radius: 10px
+        resize: none
+        transition: border-color 0.3s
+
+    input:focus, textarea:focus
+        border-color: #333
+
+    input:focus + label, textarea:focus + label, input:not(:placeholder-shown) + label, textarea:not(:placeholder-shown) + label
+        position: absolute !important
+        top: 8px !important
+        left: 15px
+        font-size: 14px
+        color: #333
+        background-color: #ffffff
+        padding: 0 2px
+
+.floating-label label
+    position: absolute
+    top: calc( 50% - 3px )
+    left: 25px
+    font-size: 16px
+
+    color: #aaa
+
+    pointer-events: none
+    transition: 0.3s ease all
+
+.label-textarea
+    top: 30px !important
+
+.form-group
+    input:focus::placeholder, textarea:focus::placeholder
+        color: transparent
+
+.button-send
+    display: flex
+    width: 100%
+    justify-content: center
+.button
+    font-size: 23px
+    width: 200px
+    background-color: transparent
+
+.error-span
+    font-size: 14px
+    color: #e61c41
+    font-family: 'Montserrat', sans-serif
+    position: absolute
+    margin-top: 5px
+
+.succes-span
+    font-size: 15px
+    color: #6cc04d
+    font-family: 'Montserrat', sans-serif
+    position: absolute
+    margin-top: -5px
+    font-weight: 400
+
+#notification
+    display: none
+    position: absolute
+    top: -50px
+    left: 50%
+    transform: translateX(-50%)
+    background-color: green
+    color: white
+    padding: 10px
+    border-radius: 5px
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2)
+    font-family: 'Montserrat', sans-serif
+
+#notification.show
+    animation: dropDown 4s ease-in-out forwards
+    display: block
+
+@keyframes dropDown
+    0%
+        top: -80px
+        opacity: 0
+    30%
+        top: 20px
+        opacity: 0.8
+    60%
+        top: 20px
+        opacity: 1
+    100%
+        top: -80px
+        opacity: 0
+
+.scroll
+    position: absolute
+    bottom: 70px
+
+.background-ellipse
+    position: relative
+    .ellipse-1
+        position: absolute
+        width: 204px
+        height: 204px
+        left: 100px
+        top: 0px
+        z-index: 0
+    .ellipse-2
+        position: absolute
+        width: 73px
+        height: 73px
+        top: 330px
+        right: 20px
+        z-index: 0
+
+/* Responsive */
+
+@media ( max-width: 1310px )
+    .content
+        flex-direction: column
+        justify-content: center
+    #contact-form
+        position: relative !important
+        width: 100%
+        left: 0
+        margin-top: 20px
+        max-width: 700px
+    .contact
+        padding-bottom: 50px
+    .form-group
+        z-index: 2 !important
+    .ellipse-1
+        width: 150px !important
+        height: 150px !important
+        top: -500px !important
+        left: calc( 50% - 75px ) !important
+        z-index: 0 !important
+    .ellipse-2
+        width: 50px !important
+        height: 50px !important
+        top: -50px !important
+        right: -20px !important
+    .content
+        margin-top: 0px
+@media ( max-width: 600px )
+    .ellipse-2
+        top: -60px !important
+    .contact
+        padding: 50px !important
+        padding-top: 0 !important
+    .scroll
+        bottom: 40px !important
+@media ( max-width: 500px )
+    .text-heading
+        font-size: 23px !important
+    .heading
+        font-size: 45px !important

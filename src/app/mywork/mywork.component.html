@@ -1,0 +1,35 @@
+<div class="mywork" id="mywork">
+    <div class="ellipse-con unselectable">
+        <img class="ellipse-1" src="assets/images/Ellipse.png" alt="bg">
+        <img class="ellipse-2" src="assets/images/Ellipse.png" alt="bg">
+        <img class="ellipse-3" src="assets/images/Ellipse.png" alt="bg">
+        <img class="ellipse-4" src="assets/images/Ellipse.png" alt="bg">
+        <img class="ellipse-5" src="assets/images/Ellipse.png" alt="bg">
+        <img class="ellipse-6" src="assets/images/Ellipse.png" alt="bg">
+        <img class="ellipse-7" src="assets/images/Ellipse.png" alt="bg">
+    </div>
+    <div class="mywork-head unselectable">
+        <div class="mywork-heading">My work</div>
+        <p>This page is a sample of my work - please feel free to try<br>them out.</p>
+    </div>
+    <div class="work-con">
+        <div class="mywork-project" *ngFor="let project of projects; let i = index">
+            <a href="{{ project.livetest }}" target="_blank"><img class="unselectable"
+                    src="assets/images/mywork/{{ project.img }}" alt="{{ project.title }}"
+                    [ngClass]="{'img-second': i % 2 === 1}"></a>
+            <div [ngClass]="i % 2 === 1 ? 'mywork-description-second' : 'mywork-description'">
+                <div class="title unselectable">{{ project.title }}</div>
+                <div class="languages unselectable">{{ project.devLanguage }}</div>
+                <div class="description unselectable">{{ project.description }}</div>
+                <div class="buttons">
+                    <a href="{{ project.github }}" target="_blank">
+                        <div class="button">Github</div>
+                    </a>
+                    <a href="{{ project.livetest }}" target="_blank">
+                        <div class="button-blue">Live Test</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

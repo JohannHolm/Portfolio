@@ -1,0 +1,257 @@
+@import '_variables.sass'
+@import 'class.sass'
+
+.mywork
+    position: relative
+    padding: 100px
+    overflow: hidden //Elipse
+    .mywork-head
+        .mywork-heading
+            font-size: 96px
+            line-height: 96px
+            color: $base-color
+            font-family: 'Baloo Da 2', sans-serif
+            font-weight: 800
+        p
+            font-size: 23px
+            margin-top: 40px
+            font-family: 'Montserrat', sans-serif
+
+.mywork-project
+    display: flex
+    height: 400px
+    position: relative
+    margin: 100px 0
+    img
+        position: absolute
+        right: 50%
+        width: 620px
+        height: 393px
+        box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.15)
+        transition: 225ms
+        &:hover
+            transform: scale(1.05)
+            margin-top: -20px
+
+    .mywork-description
+        position: absolute
+        left: 50%
+        bottom: 0
+        margin-left: 80px
+        width: 540px
+
+.title
+    font-family: 'Baloo Da 2', sans-serif
+    font-size: 45px
+    line-height: 54px
+    font-weight: 750
+    color: $base-color
+    margin-bottom: 5px
+.languages
+    font-size: 23px
+    color: $base-color
+    font-family: 'Montserrat', sans-serif
+    margin-bottom: 15px
+.description
+    font-size: 16px
+    font-family: 'Montserrat', sans-serif
+    line-height: 20px
+a
+    text-decoration: none
+.buttons
+    display: flex
+    gap: 40px
+.button
+    width: 100px
+    margin-bottom: 5px
+    margin-top: 30px
+    font-size: 23px
+    box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.15)
+
+.button-blue
+    width: 100px
+    margin-bottom: 5px
+    margin-top: 30px
+    font-size: 23px
+    padding: 15px 30px
+    border-radius: 10px
+    border: solid 2px $base-color
+    display: flex
+    justify-content: center
+    align-items: center
+    background-color: $base-color
+    color: #fff
+    font-family: 'Montserrat', sans-serif
+    transition: 225ms ease-in
+    box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.15)
+
+    &:hover
+        color: $base-color
+        background-color: #fff
+
+.mywork-description-second
+    left: unset
+    position: absolute
+    right: 50% !important
+    bottom: 0
+    margin-right: 80px
+    width: 540px
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+    align-items: flex-end
+    text-align: right
+
+.img-second
+    left: 50% !important
+
+.ellipse-con
+    width: 100%
+    .ellipse-1
+        position: absolute
+        width: 109px
+        height: 109px
+        top: 50px
+        left: 580px
+    .ellipse-2
+        position: absolute
+        width: 183px
+        height: 183px
+        right: 100px
+        top: 200px
+    .ellipse-3
+        position: absolute
+        width: 393px
+        height: 393px
+        left: -196px
+        transform: rotate(82deg)
+        top: 580px
+    .ellipse-4
+        position: absolute
+        width: 650px
+        height: 650px
+        right: -170px
+        transform: rotate(82deg)
+        top: 860px
+    .ellipse-5
+        position: absolute
+        width: 51px
+        height: 51px
+        left: 100px
+        top: 1300px
+    .ellipse-6
+        position: absolute
+        width: 238px
+        height: 238px
+        left: 50%
+        margin-left: -180px
+        top: 1680px
+        transform: rotate(82deg)
+    .ellipse-7
+        display: none
+
+/* Responsive */
+@media ( max-width: 1435px )
+    .mywork
+        padding-bottom: 0px !important
+    .work-con
+        margin-top: 80px
+    .mywork-project
+        flex-direction: column
+        height: unset !important
+        align-items: center
+        margin-top: -30px
+        img, .img-second
+            position: unset !important
+            left: unset !important
+            right: unset !important
+            margin: 0 !important
+        .mywork-description, .mywork-description-second
+            margin-top: 50px !important
+            display: flex
+            flex-direction: column
+            position: unset !important
+            left: unset !important
+            right: unset !important
+            align-items: center
+            margin: 0
+            justify-content: center !important
+            .description
+                text-align: center
+
+@media ( max-width: 1030px )
+    .ellipse-1
+        width: 60px !important
+        height: 60px !important
+        left: 560px !important
+    .ellipse-2
+        width: 140px !important
+        height: 140px !important
+        top: 300px !important
+        left: 560px !important
+    .ellipse-4
+        width: 500px !important
+        height: 500px !important
+        top: 1050px !important
+        left: 560px !important
+    .ellipse-5
+        display: none
+    .ellipse-6
+        width: 200px !important
+        height: 200px !important
+        top: 1650px !important
+        left: 60px !important
+    .ellipse-7
+        display: unset !important
+        position: absolute
+        width: 180px
+        height: 180px
+        right: 30px
+        top: 2200px
+
+@media ( max-width: 750px )
+    .languages
+        text-align: center
+    .mywork-project
+        width: 100% !important
+        img, .img-second
+            width: 100% !important
+            height: unset !important
+    .mywork-description, .mywork-description-second
+        width: calc( 100vw - 100px )!important
+    .ellipse-7
+        display: none !important
+@media ( max-width: 600px )
+    .mywork-project
+        margin-top: -50px
+    .mywork
+        padding: 0 50px !important
+        margin-top: 100px
+
+@media ( max-width: 500px )
+    .mywork-head
+        .mywork-heading
+            font-size: 61px !important
+        p
+            font-size: 16px !important
+            margin-top: 0 !important
+
+@media  ( max-width: 475px )
+    .mywork-head
+        .mywork-heading
+            font-size: 56px !important
+    .buttons
+        width: 99%
+        display: flex
+        justify-content: space-between
+        gap: unset !important
+        a
+            width: 45%
+    .button, .button-blue
+        display: flex
+        justify-content: center
+        align-items: center
+        font-size: 20px
+        padding: 0
+        width: 100%
+        height: 50px
