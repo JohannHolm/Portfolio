@@ -2,13 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class FormService {
+  private formspreeEndpoint = 'https://formspree.io/f/mnqkkeeg';
 
-  private formspreeEndpoint = 'https://formspree.io/f/mleykewy';
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   sendForm(data: any) {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
