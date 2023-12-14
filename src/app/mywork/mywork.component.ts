@@ -9,21 +9,21 @@ export class MyworkComponent {
   projects = [
     {
       title: 'Join',
-      livetest: '#',
+      livetest: 'https://johannholm.de/Join/',
       img: 'join.png',
       devLanguage: 'JavaScript | HTML | CSS',
       description:
         'Task manager inspired by the Kanban System, Create and organize tasks using drag and drop functions, assign users and categories.',
-      github: '#',
+      github: 'https://github.com/JohannHolm/Join',
     },
     {
       title: 'Sharkie',
-      livetest: '#',
+      livetest: 'https://johannholm.de/Sharkie/',
       img: 'sharkie.png',
       devLanguage: 'JavaScript | HTML | CSS',
       description:
         'Navigate the underwater world as Sharkie. Overcome enemies, avoid dangers, and collect coins in a straightforward aquatic adventure. Face the endboss in a simple battle of wit and reflexes.',
-      github: '#',
+      github: 'https://github.com/JohannHolm/sharkie',
     },
     {
       title: 'Placeholder',

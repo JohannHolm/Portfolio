@@ -45,10 +45,9 @@ export class ContactComponent {
     this.scrollOnTopMobile();
   }
 
-  scrollOnTopMobile(){
-    if(this.innerWidth < 600){
-      console.log('asdas');
-      this.scrollHover = false
+  scrollOnTopMobile() {
+    if (this.innerWidth < 600) {
+      this.scrollHover = false;
     }
   }
 

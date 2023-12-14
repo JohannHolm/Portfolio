@@ -1,5 +1,5 @@
-@import '_variables.sass'
-@import 'class.sass'
+@import _variables.sass
+@import class.sass
 
 .aboutme
     width: 100vw
@@ -12,12 +12,14 @@
     display: flex
     justify-content: center
     position: relative
+
     .ellipse-medium
         z-index: 100
         position: absolute
         top: -103px
         height: 206px
         width: 206px
+
     .ellipse-small
         position: absolute
         right: 340px
@@ -33,12 +35,13 @@
     display: flex
     align-items: center
     justify-content: space-between
+
     .aboutme-heading
         color: $base-color
         font-size: 121px
         line-height: 125px
         font-weight: 800
-        font-family: 'Baloo Da 2', sans-serif
+        font-family: "Baloo Da 2", sans-serif
         margin-top: -52px
 
     .aboutme-right
@@ -49,50 +52,59 @@
         width: 50%
         max-width: 650px
         font-size: 23px
-        font-family: 'Montserrat', sans-serif
+        font-family: "Montserrat", sans-serif
 
-@media ( max-width: 1450px )
+@media (max-width: 1450px)
     .aboutme-content
         flex-direction: column
         margin: 200px 0px 100px 0px !important
+
     .aboutme-right
         padding: 0 !important
-        width: 100%!important
+        width: 100% !important
+
     .text
         margin-top: 40px
         text-align: start
+
     .aboutme-content
         padding-bottom: 0 !important
         align-items: flex-start
+
     .text-second
         margin-top: 0
         margin-bottom: 10px
 
-@media ( max-width: 1290px )
+@media (max-width: 1290px)
     .aboutme-heading
         font-size: 80px !important
         line-height: 80px !important
+
     .ellipse-small
         right: 100px !important
 
-@media ( max-width: 600px )
+@media (max-width: 600px)
     .aboutme-content
         padding: 0 50px !important
+
     .ellipse-small
         right: 30px !important
+
     .ellipse-medium
         display: none
 
-@media ( max-width: 480px )
+@media (max-width: 480px)
     .aboutme-heading
         font-size: 61px !important
         line-height: 61px !important
 
-@media ( max-width: 390px )
+@media (max-width: 390px)
     .button
         font-size: 21px
+
     .ellipse-small
         top: 80px !important
+
     .aboutme-heading
         font-size: 51px !important
         line-height: 51px !important
