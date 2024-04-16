@@ -22,6 +22,12 @@
     height: 400px
     position: relative
     margin: 100px 0
+    &.visible
+        animation: fadeinfromright 1000ms
+        animation-fill-mode: forwards
+    &.hidden
+        opacity: 0
+
     img
         position: absolute
         right: 50%
@@ -39,6 +45,11 @@
         bottom: 0
         margin-left: 80px
         width: 540px
+        &.visible
+            animation: fadeinfromright 1000ms
+            animation-fill-mode: forwards
+        &.hidden
+            opacity: 0
 
 .title
     font-family: 'Baloo Da 2', sans-serif
@@ -149,6 +160,14 @@ a
         transform: rotate(82deg)
     .ellipse-7
         display: none
+
+.project-image
+    &.visible
+        animation: fadeinfromleft 1000ms
+        animation-fill-mode: forwards
+    &.hidden
+        opacity: 0
+
 
 /* Responsive */
 @media ( max-width: 1435px )

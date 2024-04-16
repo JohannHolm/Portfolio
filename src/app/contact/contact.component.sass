@@ -40,6 +40,11 @@ a
     display: flex
     gap: 20px
     flex-direction: column
+    &.visible
+        animation: fadeinfromright 1000ms
+        animation-fill-mode: forwards
+    &.hidden
+        opacity: 0
 
 .checkbox
     display: flex

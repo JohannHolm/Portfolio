@@ -25,3 +25,39 @@ body
 ::-webkit-scrollbar-thumb:hover
   background: #3f83d0
   
+  /*ANIMATION*/
+@keyframes fadein
+  from 
+    transform: translateY(100vh)
+    opacity: 0
+  
+  to 
+    transform: translateY(0)
+    opacity: 1
+  
+@keyframes fadeintop
+  from 
+    transform: translateY(-100vh)
+    opacity: 0
+  
+  to 
+    transform: translateY(0)
+    opacity: 1
+
+@keyframes fadeinfromleft
+  from 
+    transform: translateX(-100vw)
+    opacity: 0
+  
+  to 
+    transform: translateX(0)
+    opacity: 1
+
+@keyframes fadeinfromright
+  from 
+    transform: translateX(100vw)
+    opacity: 0
+  
+  to 
+    transform: translateX(0)
+    opacity: 1

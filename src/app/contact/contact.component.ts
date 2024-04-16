@@ -8,6 +8,8 @@ import { ScrollService } from '../services/scroll.service';
   styleUrls: ['./contact.component.sass'],
 })
 export class ContactComponent {
+  isVisible = false;
+  isFullyHidden = true;
   isHovering = false;
   isChecked = false;
   checkboxId = 'customCheckbox'; // Unique ID for the checkbox

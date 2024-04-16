@@ -13,6 +13,7 @@ import { ImprintComponent } from './imprint/imprint.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FadeInOnScrollDirective } from './fade-in-on-scroll.directive';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     ImprintComponent,
     PortfolioComponent,
     PrivacyComponent,
+    FadeInOnScrollDirective,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

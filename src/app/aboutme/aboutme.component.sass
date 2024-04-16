@@ -6,6 +6,11 @@
     max-height: 1325px
     position: relative
     max-width: 2500px
+    &.visible
+        animation: fadeintop 1000ms
+        animation-fill-mode: forwards
+    &.hidden
+        opacity: 0
 
 .ellipse-con
     width: 100%
@@ -19,6 +24,9 @@
         top: -103px
         height: 206px
         width: 206px
+        &.visible
+            animation: fadeintop 1000ms
+            animation-fill-mode: forwards
 
     .ellipse-small
         position: absolute

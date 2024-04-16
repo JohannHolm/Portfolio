@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./mywork.component.sass'],
 })
 export class MyworkComponent {
+  isVisible = false;
+  isFullyHidden = true;
+
   projects = [
     {
       title: 'Join',

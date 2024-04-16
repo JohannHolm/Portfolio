@@ -23,9 +23,12 @@
     <div class="content unselectable">
         <img src="assets/images/me.png" alt="Johann Holm">
         <div class="head-content-text">
-            <div class="head-text">Hello! I am Johann</div>
-            <div class="head-text-big front">Frontend</div>
-            <div class="head-text-big dev">Developer</div>
+            <div appFadeInOnScroll [ngClass]="{'visible': isVisible, 'hidden': isFullyHidden}" class="head-text">Hello!
+                I am Johann</div>
+            <div appFadeInOnScroll [ngClass]="{'visible': isVisible, 'hidden': isFullyHidden}"
+                class="head-text-big front">Frontend</div>
+            <div appFadeInOnScroll [ngClass]="{'visible': isVisible, 'hidden': isFullyHidden}"
+                class="head-text-big dev">Developer</div>
         </div>
     </div>
     <div class="scroll-container unselectable">

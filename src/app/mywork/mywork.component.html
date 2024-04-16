@@ -13,8 +13,10 @@
         <p>This page is a sample of my work - please feel free to try<br>them out.</p>
     </div>
     <div class="work-con">
-        <div class="mywork-project" *ngFor="let project of projects; let i = index">
-            <a href="{{ project.livetest }}" target="_blank"><img class="unselectable"
+        <div [ngClass]="{'visible': isVisible, 'hidden': isFullyHidden}" appFadeInOnScroll class="mywork-project"
+            *ngFor="let project of projects; let i = index">
+            <a href="{{ project.livetest }}" target="_blank"><img appFadeInOnScroll
+                    [ngClass]="{'visible': isVisible, 'hidden': isFullyHidden}" class="unselectable project-image"
                     src="assets/images/mywork/{{ project.img }}" alt="{{ project.title }}"
                     [ngClass]="{'img-second': i % 2 === 1}"></a>
             <div [ngClass]="i % 2 === 1 ? 'mywork-description-second' : 'mywork-description'">

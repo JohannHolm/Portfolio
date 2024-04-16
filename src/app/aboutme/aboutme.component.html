@@ -1,6 +1,6 @@
-<div class="aboutme" id="aboutme">
+<div [ngClass]="{'visible': isVisible, 'hidden': isFullyHidden}" appFadeInOnScroll class="aboutme" id="aboutme">
     <div class="ellipse-con">
-        <img class="ellipse-medium" src="assets/images/Ellipse.png" alt="bg">
+        <img [ngClass]="{'visible': isVisible}" class="ellipse-medium" src="assets/images/Ellipse.png" alt="bg">
         <img class="ellipse-small" src="assets/images/Ellipse.png" alt="bg">
     </div>
     <div class="aboutme-content">

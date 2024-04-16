@@ -110,6 +110,11 @@
             color: $base-color
             font-size: 64px
             font-family: 'Montserrat', sans-serif
+            &.visible
+                animation: fadeintop 1000ms
+                animation-fill-mode: forwards
+            &.hidden
+                opacity: 0
 
         .head-text-big
             color: $base-color
@@ -119,10 +124,20 @@
         .front
             font-size: 128px
             font-weight: 800
+            &.visible
+                animation: fadeinfromleft 1000ms
+                animation-fill-mode: forwards
+            &.hidden
+                opacity: 0
         .dev
             margin: -80px 0
             font-size: 118px
             font-weight: 800
+            &.visible
+                animation: fadeinfromright 1000ms
+                animation-fill-mode: forwards
+            &.hidden
+                opacity: 0
 
 .background-ellipse
     position: relative

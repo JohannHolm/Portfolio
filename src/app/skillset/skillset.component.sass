@@ -1,6 +1,11 @@
 .skillset
     background-image: linear-gradient(120deg, rgba(89,136,255,1) 0%, rgba(89,136,255,1) 50%, rgba(0,67,240,1) 100%)
     position: relative
+    &.visible
+        animation: fadein 1000ms
+        animation-fill-mode: forwards
+    &.hidden
+        opacity: 0
 
 .skillset-container
     padding: 100px 0
@@ -78,3 +83,4 @@
         margin-bottom: 10px
     .skill
         width: 50% !important
+

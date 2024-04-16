@@ -1,4 +1,4 @@
-<div class="skillset" id="skillset">
+<div [ngClass]="{'visible': isVisible, 'hidden': isFullyHidden}" appFadeInOnScroll class="skillset" id="skillset">
     <div class="skillset-container">
         <div class="skillset-heading">Skillset</div>
         <div class="skills-con">

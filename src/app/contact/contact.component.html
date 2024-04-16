@@ -10,7 +10,8 @@
             <div class="text-footer"> Need a Frontend developer? <span>Contact Me!</span></div>
         </div>
         <div class="form">
-            <form id="contact-form" #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm.value)">
+            <form appFadeInOnScroll [ngClass]="{'visible': isVisible, 'hidden': isFullyHidden}" id="contact-form"
+                #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm.value)">
                 <div class="form-group floating-label">
                     <input [(ngModel)]="inputValueName" name="name" #nameField="ngModel"
                         (ngModelChange)="checkInputValues()" type="text" id="name" placeholder=" " required>

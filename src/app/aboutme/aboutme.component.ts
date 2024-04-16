@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-aboutme',
@@ -9,4 +9,8 @@ export class AboutmeComponent {
   getdone() {
     return true;
   }
+  isVisible = false;
+  isFullyHidden = true;
+
+  constructor() {}
 }
