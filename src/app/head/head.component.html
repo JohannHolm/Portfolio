@@ -21,7 +21,8 @@
         </a>
     </div>
     <div class="content unselectable">
-        <img src="assets/images/me.png" alt="Johann Holm">
+        <img appFadeInOnScroll [ngClass]="{'visible': isVisible, 'hidden': isFullyHidden}" src="assets/images/me.png"
+            alt="Johann Holm">
         <div class="head-content-text">
             <div appFadeInOnScroll [ngClass]="{'visible': isVisible, 'hidden': isFullyHidden}" class="head-text">Hello!
                 I am Johann</div>

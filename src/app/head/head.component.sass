@@ -100,6 +100,11 @@
         left: 0
         height: calc( 110% - 150px )
         width: auto
+        &.visible
+            animation: fadeinfromleft 2000ms
+            animation-fill-mode: forwards
+        &.hidden
+            opacity: 0
 
     .head-content-text
         position: absolute
