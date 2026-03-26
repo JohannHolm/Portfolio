@@ -6,8 +6,9 @@
     max-height: 1325px
     position: relative
     max-width: 2500px
+    background: linear-gradient(180deg, $color-bg 0%, #ffffff 100%)
     &.visible
-        animation: fadeintop 1000ms
+        animation: fadeintop 900ms cubic-bezier(0.22, 1, 0.36, 1)
         animation-fill-mode: forwards
     &.hidden
         opacity: 0
@@ -24,9 +25,10 @@
         top: -103px
         height: 206px
         width: 206px
+        animation: float 6s ease-in-out infinite
         &.visible
-            animation: fadeintop 1000ms
-            animation-fill-mode: forwards
+            animation: fadeintop 900ms cubic-bezier(0.22, 1, 0.36, 1), float 6s 900ms ease-in-out infinite
+            animation-fill-mode: forwards, none
 
     .ellipse-small
         position: absolute
@@ -34,6 +36,7 @@
         top: 60px
         height: 82px
         width: 82px
+        animation: float 5s 1.5s ease-in-out infinite
 
 .aboutme-content
     padding: 0 100px
@@ -51,16 +54,22 @@
         font-weight: 800
         font-family: "Baloo Da 2", sans-serif
         margin-top: -52px
+        background: linear-gradient(135deg, $base-color 0%, $base-color-dark 100%)
+        -webkit-background-clip: text
+        -webkit-text-fill-color: transparent
+        background-clip: text
 
     .aboutme-right
         display: flex
-        align-items: center
+        align-items: flex-start
         flex-direction: column
         padding: 0 20px
         width: 50%
         max-width: 650px
-        font-size: 23px
+        font-size: 20px
+        line-height: 1.75
         font-family: "Montserrat", sans-serif
+        color: $color-text
 
 @media (max-width: 1450px)
     .aboutme-content
@@ -116,3 +125,4 @@
     .aboutme-heading
         font-size: 51px !important
         line-height: 51px !important
+
