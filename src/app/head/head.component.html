@@ -24,12 +24,11 @@
         <img appFadeInOnScroll [ngClass]="{'visible': isVisible, 'hidden': isFullyHidden}" src="assets/images/me.png"
             alt="Johann Holm">
         <div class="head-content-text">
-            <div appFadeInOnScroll [ngClass]="{'visible': isVisible, 'hidden': isFullyHidden}" class="head-text">Hello!
-                I am Johann</div>
-            <div appFadeInOnScroll [ngClass]="{'visible': isVisible, 'hidden': isFullyHidden}"
-                class="head-text-big front">Frontend</div>
-            <div appFadeInOnScroll [ngClass]="{'visible': isVisible, 'hidden': isFullyHidden}"
-                class="head-text-big dev">Developer</div>
+            <div appFadeInOnScroll [ngClass]="{'visible': isVisible, 'hidden': isFullyHidden}" class="head-greeting">Hello, I'm</div>
+            <div appFadeInOnScroll [ngClass]="{'visible': isVisible, 'hidden': isFullyHidden}" class="head-name">Johann Holm</div>
+            <div appFadeInOnScroll [ngClass]="{'visible': isVisible, 'hidden': isFullyHidden}" class="head-role-container">
+                <span *ngIf="showRole" class="head-role" [class.leaving]="isRoleLeaving">{{ currentRole }}</span>
+            </div>
         </div>
     </div>
     <div class="scroll-container unselectable">
