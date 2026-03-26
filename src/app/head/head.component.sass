@@ -1,5 +1,9 @@
 @import '_variables.sass'
 
+$role-leave-duration: 400ms
+$role-enter-duration: 500ms
+$role-gradient-duration: 700ms
+
 .head
     height: 100vh
     max-height: 1325px
@@ -129,51 +133,84 @@
         position: absolute
         right: 100px
         top: 30%
-        .head-text
+        .head-greeting
             z-index: 10
-            color: $color-dark
-            font-size: 64px
+            color: $color-text
+            font-size: 28px
             font-family: 'Montserrat', sans-serif
             font-weight: 300
             letter-spacing: 1px
+            margin-bottom: 8px
             &.visible
                 animation: heroSlideDown 900ms cubic-bezier(0.22, 1, 0.36, 1)
                 animation-fill-mode: forwards
             &.hidden
                 opacity: 0
-
-        .head-text-big
-            color: $base-color
+        .head-name
+            z-index: 10
             font-family: 'Baloo Da 2', sans-serif
-            text-transform: uppercase
-            margin: -30px 0
-        .front
-            font-size: 128px
+            font-size: 100px
             font-weight: 800
             letter-spacing: -2px
+            text-transform: uppercase
             background: linear-gradient(135deg, $base-color 0%, $base-color-dark 100%)
             -webkit-background-clip: text
             -webkit-text-fill-color: transparent
             background-clip: text
+            line-height: 1
             &.visible
-                animation: heroSlideLeft 900ms cubic-bezier(0.22, 1, 0.36, 1)
+                animation: heroSlideDown 900ms cubic-bezier(0.22, 1, 0.36, 1)
                 animation-fill-mode: forwards
             &.hidden
                 opacity: 0
-        .dev
-            margin: -80px 0
-            font-size: 118px
-            font-weight: 800
-            letter-spacing: -2px
-            background: linear-gradient(135deg, $base-color-dark 0%, $base-color 60%, $base-color-light 100%)
+        .head-role-container
+            z-index: 10
+            height: 52px
+            overflow: hidden
+            display: flex
+            align-items: center
+            margin-top: 20px
+            &.visible
+                animation: heroSlideDown 900ms cubic-bezier(0.22, 1, 0.36, 1)
+                animation-fill-mode: forwards
+            &.hidden
+                opacity: 0
+        .head-role
+            display: inline-block
+            font-family: 'Montserrat', sans-serif
+            font-size: 32px
+            font-weight: 600
+            background: linear-gradient(90deg, $base-color 0%, $base-color-dark 60%, $base-color-light 100%)
+            background-size: 200% auto
             -webkit-background-clip: text
             -webkit-text-fill-color: transparent
             background-clip: text
-            &.visible
-                animation: heroSlideRight 900ms cubic-bezier(0.22, 1, 0.36, 1)
-                animation-fill-mode: forwards
-            &.hidden
-                opacity: 0
+            letter-spacing: 0.5px
+            animation: roleEnter $role-enter-duration cubic-bezier(0.22, 1, 0.36, 1) both, gradientWipe $role-gradient-duration ease both
+            &.leaving
+                animation: roleLeave $role-leave-duration cubic-bezier(0.4, 0, 0.2, 1) both
+
+@keyframes roleEnter
+    from
+        transform: translateY(40px)
+        opacity: 0
+    to
+        transform: translateY(0)
+        opacity: 1
+
+@keyframes roleLeave
+    from
+        transform: translateY(0)
+        opacity: 1
+    to
+        transform: translateY(-40px)
+        opacity: 0
+
+@keyframes gradientWipe
+    from
+        background-position: 200% center
+    to
+        background-position: 0% center
 
 .background-ellipse
     position: relative
@@ -258,13 +295,10 @@
             height: auto
 @media ( max-width: 1350px )
     .head-content-text
-        .head-text
-            font-size: 55px !important
-        .front
-            font-size: 108px !important
-        .dev
-            margin: -80px 0
-            font-size: 100px !important
+        .head-name
+            font-size: 84px !important
+        .head-role
+            font-size: 26px !important
 @media ( max-width: 1240px )
     .ellipse-big
         left: -400px
@@ -287,15 +321,12 @@
     .head-content-text
         left: 100px !important
         top: 150px !important
-        .head-text
+        .head-greeting
             color: #fff !important
-            -webkit-text-fill-color: #fff !important
-        .front
-            color: #fff !important
+        .head-name
             -webkit-text-fill-color: #fff !important
             background: none
-        .dev
-            color: #fff !important
+        .head-role
             -webkit-text-fill-color: #fff !important
             background: none
 @media  ( max-width: 890px )
@@ -306,13 +337,12 @@
         right: 100px !important
         left: unset !important
     .head-content-text
-        .head-text
-            font-size: 37px !important
-        .front
-            font-size: 73px !important
-        .dev
-            margin: -60px 0 !important
-            font-size: 67px !important
+        .head-name
+            font-size: 60px !important
+        .head-role
+            font-size: 22px !important
+        .head-role-container
+            height: 42px !important
     .content
         img
             max-height: calc( 100% - 150px ) !important
@@ -352,14 +382,12 @@
             max-height: calc( 100% - 350px )
 @media  ( max-width: 560px )
     .head-content-text
-        .head-text
-            font-size: 24px !important
-            line-height: 40px
-        .front
-            font-size: 55px !important
-        .dev
-            margin: -50px 0 !important
-            font-size: 51px !important
+        .head-name
+            font-size: 46px !important
+        .head-role
+            font-size: 18px !important
+        .head-role-container
+            height: 36px !important
     .ellipse-big
         right: 40px !important
 
@@ -370,13 +398,11 @@
             z-index: 999
 @media  ( max-width: 373px )
     .head-content-text
-        .head-text
-            font-size: 18px !important
-            line-height: 40px
-        .front
-            font-size: 42px !important
-        .dev
-            margin: -40px 0 !important
-            font-size: 40px !important
+        .head-name
+            font-size: 36px !important
+        .head-role
+            font-size: 14px !important
+        .head-role-container
+            height: 28px !important
     .ellipse-big
         top: -140px !important
