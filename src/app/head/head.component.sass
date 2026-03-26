@@ -4,8 +4,9 @@
     height: 100vh
     max-height: 1325px
     overflow: hidden //Elipse
-    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, #d7e2fe8a 100%)
+    background: linear-gradient(160deg, #ffffff 0%, #eef2ff 60%, #dce6ff 100%)
     position: relative
+
 .navigation
     z-index: 10
     position: absolute
@@ -33,13 +34,28 @@
                 text-decoration: none
                 display: inline-block
                 cursor: pointer
-                font-size: 23px
+                font-size: 18px
+                font-weight: 500
                 color: $base-color
                 font-family: 'Montserrat', sans-serif
-
-                &:hover
-                    transition: all 225ms
-                    font-weight: 700
+                letter-spacing: 0.3px
+                position: relative
+                padding-bottom: 3px
+                &::after
+                    content: ''
+                    position: absolute
+                    bottom: 0
+                    left: 0
+                    width: 100%
+                    height: 2px
+                    border-radius: 2px
+                    background-color: $base-color
+                    transform: scaleX(0)
+                    transform-origin: right
+                    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1)
+                &:hover::after
+                    transform: scaleX(1)
+                    transform-origin: left
 
 .mobile-nav
     display: none
@@ -59,28 +75,30 @@
     display: flex
     align-items: center
     flex-direction: column
-    background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5004595588235294) 30%, rgba(255,255,255,0.7973783263305322) 50%, rgba(255,255,255,0.9) 100%)
+    background: linear-gradient(0deg, rgba(248,250,255,0) 0%, rgba(248,250,255,0.6) 30%, rgba(248,250,255,0.9) 60%, rgba(255,255,255,0.97) 100%)
+    backdrop-filter: blur(10px)
+    -webkit-backdrop-filter: blur(10px)
     z-index: 1000
-    animation: dropDown 300ms ease-in-out forwards
+    animation: dropDown 300ms cubic-bezier(0.4, 0, 0.2, 1) forwards
     transform-origin: top center
     a
         z-index: 10000
         margin: 10px
-        color: #1023b4
-        font-size: 25px
-        font-weight: 500
+        color: $base-color-dark
+        font-size: 22px
+        font-weight: 600
         font-family: 'Montserrat', sans-serif
         text-decoration: none
+        letter-spacing: 0.5px
+        transition: color 0.2s ease
         &:hover
             color: $base-color
 
 @keyframes dropDown
     0%
         transform: scaleY(0)
-
     80%
-        transform: scaleY(1.1)
-
+        transform: scaleY(1.04)
     100%
         transform: scaleY(1)
 
@@ -100,8 +118,9 @@
         left: 0
         height: calc( 110% - 150px )
         width: auto
+        filter: drop-shadow(0 20px 40px rgba(89, 136, 255, 0.18))
         &.visible
-            animation: fadeinfromleft 2000ms
+            animation: heroSlideLeft 1200ms cubic-bezier(0.22, 1, 0.36, 1)
             animation-fill-mode: forwards
         &.hidden
             opacity: 0
@@ -112,11 +131,13 @@
         top: 30%
         .head-text
             z-index: 10
-            color: $base-color
+            color: $color-dark
             font-size: 64px
             font-family: 'Montserrat', sans-serif
+            font-weight: 300
+            letter-spacing: 1px
             &.visible
-                animation: fadeintop 1000ms
+                animation: heroSlideDown 900ms cubic-bezier(0.22, 1, 0.36, 1)
                 animation-fill-mode: forwards
             &.hidden
                 opacity: 0
@@ -129,8 +150,13 @@
         .front
             font-size: 128px
             font-weight: 800
+            letter-spacing: -2px
+            background: linear-gradient(135deg, $base-color 0%, $base-color-dark 100%)
+            -webkit-background-clip: text
+            -webkit-text-fill-color: transparent
+            background-clip: text
             &.visible
-                animation: fadeinfromleft 1000ms
+                animation: heroSlideLeft 900ms cubic-bezier(0.22, 1, 0.36, 1)
                 animation-fill-mode: forwards
             &.hidden
                 opacity: 0
@@ -138,8 +164,13 @@
             margin: -80px 0
             font-size: 118px
             font-weight: 800
+            letter-spacing: -2px
+            background: linear-gradient(135deg, $base-color-dark 0%, $base-color 60%, $base-color-light 100%)
+            -webkit-background-clip: text
+            -webkit-text-fill-color: transparent
+            background-clip: text
             &.visible
-                animation: fadeinfromright 1000ms
+                animation: heroSlideRight 900ms cubic-bezier(0.22, 1, 0.36, 1)
                 animation-fill-mode: forwards
             &.hidden
                 opacity: 0
@@ -154,6 +185,8 @@
     left: -199px
     width: 900px
     height: 900px
+    animation: floatSlow 8s ease-in-out infinite
+    opacity: 0.7
 
 .scroll-container
     position: relative
@@ -172,13 +205,17 @@
             text-transform: uppercase
             color: $base-color
             font-family: 'Montserrat', sans-serif
-            font-size: 23px
+            font-size: 14px
+            font-weight: 600
+            letter-spacing: 3px
             margin-right: -43px
         .scroll-line
             flex-grow: 1
             height: calc( 100% - 32px )
             width: 2px
-            background-color: $base-color
+            background: linear-gradient(180deg, $base-color 0%, rgba(89, 136, 255, 0.2) 100%)
+            border-radius: 2px
+            animation: scrollPulse 2s ease-in-out infinite
 
 .left-icon-container
     position: relative
@@ -191,17 +228,19 @@
         flex-direction: column
         .icon-link
             cursor: pointer
-            transition: 225ms
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1)
             position: relative
             width: 20px
             display: flex
             justify-content: flex-start
+            opacity: 0.8
             &:hover
-                margin-left: -10px
+                margin-left: -8px
+                opacity: 1
             img
                 padding: 12.5px
 
-/* Respnsive */
+/* Responsive */
 @media ( max-width: 1550px )
     .content
         img
@@ -250,10 +289,15 @@
         top: 150px !important
         .head-text
             color: #fff !important
+            -webkit-text-fill-color: #fff !important
         .front
             color: #fff !important
+            -webkit-text-fill-color: #fff !important
+            background: none
         .dev
             color: #fff !important
+            -webkit-text-fill-color: #fff !important
+            background: none
 @media  ( max-width: 890px )
     .left-icon-container
         display: none
@@ -336,5 +380,3 @@
             font-size: 40px !important
     .ellipse-big
         top: -140px !important
-
-
