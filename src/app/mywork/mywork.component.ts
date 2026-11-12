@@ -14,7 +14,7 @@ export class MyworkComponent {
   projects = [
     {
       title: 'Join',
-      livetest: 'https://johannholm.de/Join/',
+      livetest: 'https://join.johannholm.de',
       img: 'join.png',
       devLanguage: 'JavaScript | HTML | CSS',
       description:
@@ -23,7 +23,7 @@ export class MyworkComponent {
     },
     {
       title: 'Sharkie',
-      livetest: 'https://johannholm.de/Sharkie/',
+      livetest: 'https://sharkie.johannholm.de',
       img: 'sharkie.png',
       devLanguage: 'JavaScript | HTML | CSS',
       description:
