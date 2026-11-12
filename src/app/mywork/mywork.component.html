@@ -16,7 +16,7 @@
     @for (project of projects; track project; let i = $index) {
       <div [ngClass]="{'visible': isVisible, 'hidden': isFullyHidden}" appFadeInOnScroll class="mywork-project"
         >
-        <a href="{{ project.livetest }}" target="_blank"><img appFadeInOnScroll
+        <a href="{{ project.livetest }}" target="_blank" rel="noopener noreferrer"><img appFadeInOnScroll
           [ngClass]="{'visible': isVisible, 'hidden': isFullyHidden}" class="unselectable project-image"
           src="assets/images/mywork/{{ project.img }}" alt="{{ project.title }}"
         [ngClass]="{'img-second': i % 2 === 1}"></a>
@@ -25,10 +25,12 @@
           <div class="languages unselectable">{{ project.devLanguage }}</div>
           <div class="description unselectable">{{ project.description }}</div>
           <div class="buttons">
-            <a href="{{ project.github }}" target="_blank">
-              <div class="button hvr-bounce-to-right">Github</div>
-            </a>
-            <a href="{{ project.livetest }}" target="_blank">
+            @if (project.github) {
+              <a href="{{ project.github }}" target="_blank" rel="noopener noreferrer">
+                <div class="button hvr-bounce-to-right">Github</div>
+              </a>
+            }
+            <a href="{{ project.livetest }}" target="_blank" rel="noopener noreferrer">
               <div class="button-blue">Live Test</div>
             </a>
           </div>

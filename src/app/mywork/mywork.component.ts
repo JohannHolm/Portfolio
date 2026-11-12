@@ -31,12 +31,13 @@ export class MyworkComponent {
       github: 'https://github.com/JohannHolm/sharkie',
     },
     {
-      title: 'Placeholder',
-      livetest: '#',
-      img: 'sharkie.png',
-      devLanguage: 'Placeholder',
-      description: 'Placeholder.',
-      github: '#',
+      title: 'OneMoment',
+      livetest: 'https://shop.johannholm.de/',
+      img: 'onemoment.jpg',
+      devLanguage: 'Web Design | Bridal Fashion',
+      description:
+        'A bridal fashion website presenting curated collections, its atelier, and a personal appointment experience.',
+      github: 'https://github.com/JohannHolm/bridal_fashion',
     },
   ];
 }
