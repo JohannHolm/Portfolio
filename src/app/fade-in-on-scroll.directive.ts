@@ -1,7 +1,8 @@
 import { Directive, ElementRef, OnInit } from '@angular/core';
 
 @Directive({
-  selector: '[appFadeInOnScroll]',
+    selector: '[appFadeInOnScroll]',
+    standalone: false
 })
 export class FadeInOnScrollDirective implements OnInit {
   constructor(private elementRef: ElementRef) {}

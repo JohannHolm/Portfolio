@@ -1,6 +1,7 @@
 # Portfolio
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.9.
+This project uses [Angular CLI](https://github.com/angular/angular-cli) 22 and Node.js 24.22.1.
+Install dependencies with `npm ci`.
 
 ## Development server
 

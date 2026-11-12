@@ -3,7 +3,7 @@
 ## Ablauf
 
 `.github/workflows/deploy.yml` führt bei Pushes auf `main` und bei manuellem Start
-einen CI/CD-Lauf auf `ubuntu-latest` aus. Mit Node.js 18.20.8 werden die
+einen CI/CD-Lauf auf `ubuntu-latest` aus. Mit Node.js 24.22.1 werden die
 Abhängigkeiten per `npm ci` installiert und das Angular-Projekt für Production
 gebaut. Vor dem Upload prüft der Workflow, dass
 `dist/portfolio/index.html` und `.htaccess` vorhanden und nicht leer sind. Erst

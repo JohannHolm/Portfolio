@@ -12,25 +12,21 @@ import { FooterComponent } from './footer/footer.component';
 import { ImprintComponent } from './imprint/imprint.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { PrivacyComponent } from './privacy/privacy.component';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi, withXhr } from '@angular/common/http';
 import { FadeInOnScrollDirective } from './fade-in-on-scroll.directive';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    HeadComponent,
-    AboutmeComponent,
-    SkillsetComponent,
-    MyworkComponent,
-    ContactComponent,
-    FooterComponent,
-    ImprintComponent,
-    PortfolioComponent,
-    PrivacyComponent,
-    FadeInOnScrollDirective,
-  ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
-  providers: [],
-  bootstrap: [AppComponent],
-})
+@NgModule({ declarations: [
+        AppComponent,
+        HeadComponent,
+        AboutmeComponent,
+        SkillsetComponent,
+        MyworkComponent,
+        ContactComponent,
+        FooterComponent,
+        ImprintComponent,
+        PortfolioComponent,
+        PrivacyComponent,
+        FadeInOnScrollDirective,
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule, AppRoutingModule, FormsModule], providers: [provideHttpClient(withXhr(), withInterceptorsFromDi())] })
 export class AppModule {}

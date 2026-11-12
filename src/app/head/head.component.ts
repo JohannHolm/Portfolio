@@ -1,10 +1,12 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 import { PortfolioComponent } from '../portfolio/portfolio.component';
 
 @Component({
-  selector: 'app-head',
-  templateUrl: './head.component.html',
-  styleUrls: ['./head.component.sass'],
+    selector: 'app-head',
+    templateUrl: './head.component.html',
+    styleUrls: ['./head.component.sass'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class HeadComponent implements OnInit, OnDestroy {
   isVisible = false;

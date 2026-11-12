@@ -1,11 +1,13 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, ChangeDetectionStrategy } from '@angular/core';
 import { FormService } from '../services/form-service';
 import { ScrollService } from '../services/scroll.service';
 
 @Component({
-  selector: 'app-contact',
-  templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.sass'],
+    selector: 'app-contact',
+    templateUrl: './contact.component.html',
+    styleUrls: ['./contact.component.sass'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class ContactComponent {
   isVisible = false;
@@ -41,7 +43,7 @@ export class ContactComponent {
     this.scrollOnTopMobile();
   }
 
-  @HostListener('window:resize', ['$event'])
+  @HostListener('window:resize')
   onResize() {
     this.innerWidth = window.innerWidth;
     this.scrollOnTopMobile();
