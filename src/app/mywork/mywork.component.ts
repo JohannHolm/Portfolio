@@ -1,11 +1,11 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-    selector: 'app-mywork',
-    templateUrl: './mywork.component.html',
-    styleUrls: ['./mywork.component.sass'],
-    changeDetection: ChangeDetectionStrategy.Eager,
-    standalone: false
+  selector: 'app-mywork',
+  templateUrl: './mywork.component.html',
+  styleUrls: ['./mywork.component.sass'],
+  changeDetection: ChangeDetectionStrategy.Eager,
+  standalone: false,
 })
 export class MyworkComponent {
   isVisible = false;
@@ -34,7 +34,7 @@ export class MyworkComponent {
       title: 'OneMoment',
       livetest: 'https://shop.johannholm.de/',
       img: 'onemoment.jpg',
-      devLanguage: 'Web Design | Bridal Fashion',
+      devLanguage: 'Web Design | Astro',
       description:
         'A bridal fashion website presenting curated collections, its atelier, and a personal appointment experience.',
       github: 'https://github.com/JohannHolm/bridal_fashion',
