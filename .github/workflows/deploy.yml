@@ -1,0 +1,62 @@
+name: Build and deploy portfolio
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: portfolio-production-deploy
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    name: Build and deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js 18.20.8
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18.20.8
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Angular production bundle
+        run: npm run build -- --configuration production
+
+      - name: Verify production output
+        run: |
+          test -d dist/portfolio
+          test -s dist/portfolio/index.html
+          test -s dist/portfolio/.htaccess
+          if [ -d dist/portfolio/browser ]; then
+            echo "Unexpected browser subdirectory in Angular build output."
+            exit 1
+          fi
+          if ! find dist/portfolio -type f -print -quit | grep -q .; then
+            echo "Angular build output contains no files."
+            exit 1
+          fi
+
+      - name: Deploy production bundle to ALL-INKL via explicit FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          security: strict
+          local-dir: dist/portfolio/
+          server-dir: ./
+          dangerous-clean-slate: false
+          log-level: minimal
